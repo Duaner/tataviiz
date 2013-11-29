@@ -1,7 +1,7 @@
-2013-11-29 10:52:33,582 - [INFO] - from play in pool-65-thread-3 
+2013-11-29 11:29:25,753 - [INFO] - from play in pool-4-thread-3 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2013-11-29 10:52:35,294 - [ERROR] - from net.sf.ehcache.Cache in play-internal-execution-context-1 
+2013-11-29 11:29:27,859 - [ERROR] - from net.sf.ehcache.Cache in play-internal-execution-context-1 
 Unable to set localhost. This prevents creation of a GUID. Cause was: typhoon.paris.zenexity.com: typhoon.paris.zenexity.com: nodename nor servname provided, or not known
 java.net.UnknownHostException: typhoon.paris.zenexity.com: typhoon.paris.zenexity.com: nodename nor servname provided, or not known
 	at java.net.InetAddress.getLocalHost(InetAddress.java:1438) ~[na:1.7.0_10]
@@ -50,95 +50,6 @@ Caused by: java.net.UnknownHostException: typhoon.paris.zenexity.com: nodename n
 	at java.net.InetAddress.getLocalHost(InetAddress.java:1434) ~[na:1.7.0_10]
 	... 38 common frames omitted
 
-2013-11-29 10:52:35,329 - [ERROR] - from application in New I/O worker #1 
-
-
-! @6gdjcf9em - Internal server error, for (GET) [/] ->
-
-play.api.UnexpectedException: Unexpected exception[UnsatisfiedLinkError: /Applications/Arduino.app/Contents/Resources/Java/librxtxSerial.jnilib: dlopen(/Applications/Arduino.app/Contents/Resources/Java/librxtxSerial.jnilib, 1): no suitable image found.  Did find:
-	/Applications/Arduino.app/Contents/Resources/Java/librxtxSerial.jnilib: no matching architecture in universal wrapper]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:152) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10-2.2.1.jar:2.2.1]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10-2.2.1.jar:2.2.1]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10-2.2.1.jar:2.2.1]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: java.lang.UnsatisfiedLinkError: /Applications/Arduino.app/Contents/Resources/Java/librxtxSerial.jnilib: dlopen(/Applications/Arduino.app/Contents/Resources/Java/librxtxSerial.jnilib, 1): no suitable image found.  Did find:
-	/Applications/Arduino.app/Contents/Resources/Java/librxtxSerial.jnilib: no matching architecture in universal wrapper
-	at java.lang.ClassLoader$NativeLibrary.load(Native Method) ~[na:1.7.0_10]
-	at java.lang.ClassLoader.loadLibrary1(ClassLoader.java:1939) ~[na:1.7.0_10]
-	at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1868) ~[na:1.7.0_10]
-	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1854) ~[na:1.7.0_10]
-	at java.lang.Runtime.loadLibrary0(Runtime.java:845) ~[na:1.7.0_10]
-	at java.lang.System.loadLibrary(System.java:1084) ~[na:1.7.0_10]
-	at gnu.io.CommPortIdentifier.<clinit>(CommPortIdentifier.java:83) ~[RXTXcomm.jar:na]
-	at utils.SerialOverUSB.initialize(SerialOverUSB.java:27) ~[na:na]
-	at services.Serial$.initialize(Serial.scala:9) ~[na:na]
-	at Global$.onStart(Global.scala:6) ~[na:na]
-	at play.api.GlobalPlugin.onStart(GlobalSettings.scala:203) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10-2.2.1.jar:2.2.1]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10-2.2.1.jar:2.2.1]
-	... 14 common frames omitted
-
-2013-11-29 10:52:35,894 - [ERROR] - from application in New I/O worker #1 
-
-
-! @6gdjcf9em - Internal server error, for (GET) [/] ->
-
-play.api.UnexpectedException: Unexpected exception[UnsatisfiedLinkError: /Applications/Arduino.app/Contents/Resources/Java/librxtxSerial.jnilib: dlopen(/Applications/Arduino.app/Contents/Resources/Java/librxtxSerial.jnilib, 1): no suitable image found.  Did find:
-	/Applications/Arduino.app/Contents/Resources/Java/librxtxSerial.jnilib: no matching architecture in universal wrapper]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:152) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10-2.2.1.jar:2.2.1]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10-2.2.1.jar:2.2.1]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10-2.2.1.jar:2.2.1]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: java.lang.UnsatisfiedLinkError: /Applications/Arduino.app/Contents/Resources/Java/librxtxSerial.jnilib: dlopen(/Applications/Arduino.app/Contents/Resources/Java/librxtxSerial.jnilib, 1): no suitable image found.  Did find:
-	/Applications/Arduino.app/Contents/Resources/Java/librxtxSerial.jnilib: no matching architecture in universal wrapper
-	at java.lang.ClassLoader$NativeLibrary.load(Native Method) ~[na:1.7.0_10]
-	at java.lang.ClassLoader.loadLibrary1(ClassLoader.java:1939) ~[na:1.7.0_10]
-	at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1868) ~[na:1.7.0_10]
-	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1854) ~[na:1.7.0_10]
-	at java.lang.Runtime.loadLibrary0(Runtime.java:845) ~[na:1.7.0_10]
-	at java.lang.System.loadLibrary(System.java:1084) ~[na:1.7.0_10]
-	at gnu.io.CommPortIdentifier.<clinit>(CommPortIdentifier.java:83) ~[RXTXcomm.jar:na]
-	at utils.SerialOverUSB.initialize(SerialOverUSB.java:27) ~[na:na]
-	at services.Serial$.initialize(Serial.scala:9) ~[na:na]
-	at Global$.onStart(Global.scala:6) ~[na:na]
-	at play.api.GlobalPlugin.onStart(GlobalSettings.scala:203) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10-2.2.1.jar:2.2.1]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10-2.2.1.jar:2.2.1]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10-2.2.1.jar:2.2.1]
-	... 14 common frames omitted
+2013-11-29 11:29:27,907 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
 

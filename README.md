@@ -36,7 +36,7 @@ Copy Arduino RXTXcomm.jar into Play lib directory
 Run Play with additional enironment variable
 play> run -Djava.library.path=[ARDUINO_HOME]
 
-play> run -Djava.library.path=/Applications/Arduino.app/Contents/Resources/Java
+play> run -Djava.library.path=/Applications/Arduino.app/Contents/Resources/Java/
 
 On MacOs
 ========

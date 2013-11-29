@@ -11,10 +11,14 @@ object Application extends Controller {
     Ok(views.html.index())
   }
 
-  def letter = Action { request =>
-    val l: String = request.getQueryString("q").getOrElse(" ")
+  def height = Action(parse.json) { request =>
+    println(request.body)
+    val h: BigDecimal = request.body \ "height" match {
+      case JsNumber(value) => value
+      case _ => BigDecimal(0)
+    }
 
-    val cl = l match {
+    val cl = h.toString match {
       case "a" => "a"
       case "e" => "e"
       case "i" => "i"
