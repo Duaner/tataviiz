@@ -1,22 +1,178 @@
-@()
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta name="description" content="Tataviiz">
+    <meta name="keywords" content="dataviiz">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+    
+  </head>
+  <body>
 
-@main() {
+  <a href="https://github.com/Duaner/tataviiz"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="enfourche-moi sur GitHub"></a>
 
-<h1>TOTO</h1>
+<!-- Intro -->
 
-<div>
-  <p>
-    <label>min decibel</label>
-    <input id="minDecibelInput" type="range" value="-100" min="-100" max="0" />
-  </p>
-  <p>
-    <label>max decibel</label>
-    <input id="maxDecibelInput" type="range" value="-50" min="-100" max="0" />
-  </p>
-  <p>
-    <progress id="micProgress" value="0" min="0" max="100"></progress>
-  </p>
+    <div class="jumbotron">
+        <h1>Tataviiz</h1>
+        <br/>
+        <p>Nous proposons une représentation physique de données à l'aide de trois éléments :</p>
+        <div class="row">
 
-  <script src="@routes.Assets.at("javascripts/main.js")" type="text/javascript"></script>
+          <div class="col-md-3">
+
+            <div class="thumbnail">
+              <img src="http://www.emmanuelmayoud.net/wp-content/uploads/2012/01/arduinouno_r3_front.jpg" width="200px" height="200px">
+              <div class="caption">
+                <h3>Arduino</h3>
+                <p>Fourni par Yohann</p>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+
+            <div class="thumbnail">
+              <img src="/assets/images/turbine.png" width="200px" height="200px">
+              <div class="caption">
+                <h3>La turbine 12V</h3>
+                <p>La turbine 12V trouvée par Renaud rue Montgallet, elle permet d'envoyer un flux d'air concentré dans le tube</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+
+            <div class="thumbnail">
+              <img src="/assets/images/tube.png" width="200px" height="200px">
+              <div class="caption">
+                <h3>Le tube en verre acrylique</h3>
+                <p>C'est une rampe d'escalier (main courante) dégotée par Nathanaël chez Leroy Merlin (50€)</p>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+
+            <div class="thumbnail">
+              <img src="/assets/images/ball.png" width="200px" height="200px">
+              <div class="caption">
+                <h3>La sphère en polystyrène</h3>
+                <p>Dénichées chez Castorama (3€) par NLA</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!-- Viz Micro -->
+
+      <div class="jumbotron">
+
+        <h2>Sources de données</h2>
+
+        <p>Pour ce prototype nous avons utilisé en entrée de donnée le volume de la voix<p>
+
+      </div>
+
+<!-- Test Zone -->
+
+<div class="jumbotron">
+
+
+  <h2>Testez-moi </h2>
+
+
+        <!--<a id="micro" class="btn btn-primary btn-success btn-lg active">Micro</a>-->
+        <p>Activez votre micro et parlez !<p>
+        <br/>
+
+  <div>
+      <div>
+        <p>
+          <label>min decibel</label>
+          <input id="minDecibelInput" type="range" value="-100" min="-100" max="0" />
+        </p>
+        <p>
+          <label>max decibel</label>
+          <input id="maxDecibelInput" type="range" value="-50" min="-100" max="0" />
+        </p>
+        <p class="hidden">
+          <progress id="micProgress" value="0" min="0" max="100"></progress>
+        </p>
+        <p>
+          <div class="progress">
+            <div id="micProgressBs" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            </div>
+          </div>
+        </p>
+
+      </div>
+  </div>
+
+
+    <!-- <div id="bitcoinZone" class="bitcoin">
+      <div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+          <span class="sr-only">40</span>
+        </div>
+      </div>
+    </div>-->
+
 </div>
-}
+
+
+
+
+<!-- Zengulars -->
+
+<div class="jumbotron">
+
+    <h2>Hackers</h2>
+
+    <div class="row">
+          <div class="col-xs-3" style="text-align:center;">
+            <img src="https://lh5.googleusercontent.com/-RRbW5iiS6TI/UiBqSBCXz1I/AAAAAAAAAFA/5J_DONtiOKA/s180-no/ddi+%25281%2529.png" class="img-circle" width="150px" height="150px">
+          </div>
+          <div class="col-xs-3" style="text-align:center;">
+            <a href="https://twitter.com/paul_dijou"><img src="https://lh5.googleusercontent.com/-IeoxyX4zDUc/T4CIE3jaMvI/AAAAAAAACOw/jd3jFZ2wVp4/w420-h419-no/avatar.jpeg" class="img-circle" width="150px" height="150px"></a>
+          </div>
+          <div class="col-xs-3" style="text-align:center;">
+            <a href="https://twitter.com/drfars"><img src="https://lh5.googleusercontent.com/-URGCFem3nj0/UclmfTPld6I/AAAAAAAAAeU/kBFew76pyCM/s180-no/large_927006.png" class="img-circle" width="150px" height="150px"></a>
+          </div>
+
+          <div class="col-xs-3" style="text-align:center;">
+            <a href="https://twitter.com/greweb"><img src="https://lh5.googleusercontent.com/-dvOtcaitSYA/UAPIHjlIZjI/AAAAAAAAABQ/R8z944_raBE/s250-no/photo.jpeg" class="img-circle" width="150px" height="150px"></a>
+          </div>
+
+    </div>
+
+    <br/>
+
+    <div class="row">
+
+          <div class="col-xs-3" style="text-align:center;">
+            <a href="https://twitter.com/RenaudBressand"><img src="https://lh6.googleusercontent.com/-BtHpfnQuwaA/UZSbZWP5AeI/AAAAAAAAABM/NaC2sm5wFzA/w462-h693-no/911975_10200442188950020_720002215_n.jpg" class="img-circle" width="150px" height="150px"></a>
+          </div>
+          <div class="col-xs-3" style="text-align:center;">
+            <img src="https://lh6.googleusercontent.com/-DJ8mDE4aS3g/AAAAAAAAAAI/AAAAAAAAAAA/v5mQbMyZkJs/s120-c/photo.jpg" class="img-circle" width="150px" height="150px">
+          </div>
+          <div class="col-xs-3" style="text-align:center;">
+            <a href="http://twitter.com/l4mnath"><img src="https://lh3.googleusercontent.com/-Y5vuH04o-1M/AAAAAAAAAAI/AAAAAAAAAMo/HVW7mlolFYE/s120-c/photo.jpg" class="img-circle" width="150px" height="150px"></a>
+          </div>
+          <div class="col-xs-3" style="text-align:center;">
+            <img src="https://zenstudio.atlassian.net/secure/useravatar?avatarId=12501&username=ybr" class="img-circle" width="150px" height="150px">
+          </div>
+
+    </div>
+</div>
+
+  </body>
+  
+  <script type="text/javascript" src="/assets/javascripts/jquery-1.9.0.min.js"></script>
+  <script type="text/javascript" src="/assets/javascripts/q.js"></script>
+  <script type="text/javascript" src="/assets/javascripts/qajax.min.js"></script>
+  <script type="text/javascript" src="/assets/javascripts/main.js"></script>
+
+</html>

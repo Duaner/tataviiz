@@ -1,6 +1,28 @@
+function activeMicro () {
+  $( "#micro" ).addClass("active");
+  $( "#bitcoin" ).removeClass("active");
+
+  $("#bitcoinZone").fadeOut();
+  $("#microZone").fadeIn();
+}
+
+function activeBitcoin () {
+  $( "#micro" ).removeClass("active");
+  $( "#bitcoin" ).addClass("active");
+
+  $("#microZone").fadeOut();
+  $("#bitcoinZone").fadeIn();
+}
+
+$( "#micro" ).click(activeMicro);
+$( "#bitcoin" ).click(activeBitcoin);
+
+var isMicro = true;
+
 var minDecibelInput = document.getElementById("minDecibelInput");
 var maxDecibelInput = document.getElementById("maxDecibelInput");
 var micProgress = document.getElementById("micProgress");
+var micProgressBs = document.getElementById("micProgressBs");
 
 var ws = new WebSocket("ws://"+location.host+"/ws/height");
 
@@ -51,7 +73,7 @@ function sendHeight (v) {
             data: { height: v }
         });
         */
-        ws.send(v);
+        //ws.send(v);
     }
 }
 
@@ -66,7 +88,46 @@ microphone.then(function (mic) {
       nb ++;
     }
     var value = Math.floor(255*sum/nb);
-    sendHeight(value);
+    if (isMicro) { sendHeight(value); }
     micProgress.value = value;
+    micProgressBs.style.width = value + '%';
   }, REFRESH_RATE);
 });
+
+
+// ---------------------------------------------
+// BITCOINS
+// ---------------------------------------------
+function closeWS() {
+  if(wsSocket) wsSocket.close();
+}
+
+var WS = window['MozWebSocket'] ? MozWebSocket : WebSocket;
+console.log(WS);
+var wsSocket = new WS('ws://ws.blockchain.info/inv');
+console.log(wsSocket);
+
+wsSocket.onopen = function(evt) {
+  console.log('onopen'); console.log(evt);
+  console.log('sub');
+  wsSocket.send('{"op":"set_tx_mini"}{"op":"unconfirmed_sub"}');
+};
+
+wsSocket.onclose = function(evt) { console.log('onclose'); console.log(evt); };
+
+var nbTx = 0;
+var totalAmount = 0;
+wsSocket.onmessage = function(evt) {
+  var value = JSON.parse(evt.data).x.value / 100000000;
+  nbTx++;
+  totalAmount += value;
+};
+
+wsSocket.onerror = function(evt) { console.log('onerror'); console.log(evt); };
+
+setInterval(function () {
+  var h = totalAmount > 200 ? 200 : totalAmount;
+  nbTx = 0;
+  totalAmount = 0;
+  if (!isMicro) { sendHeight(h); }
+}, 1000);
