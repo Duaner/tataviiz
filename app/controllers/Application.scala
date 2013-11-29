@@ -17,19 +17,8 @@ object Application extends Controller {
       case JsNumber(value) => value
       case _ => BigDecimal(0)
     }
-
-    val cl = h.toString match {
-      case "a" => "a"
-      case "e" => "e"
-      case "i" => "i"
-      case "o" => "o"
-      case "u" => "u"
-      case "œ" => "e"
-      case _ => " "
-    }
-
-    services.Serial.send(cl);
-    Ok(cl)
+    services.Serial.send(h.toByte.toString)
+    Ok
   }
 
 }

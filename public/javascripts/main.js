@@ -35,6 +35,15 @@ maxDecibelInput.addEventListener("change", function() {
   analyser.maxDecibels = this.value;
 });
 
+function sendHeight (v) {
+    return Qajax("/height", {
+        logs: false,
+        ie: false,
+        method: "POST",
+        data: { height: v }
+    });
+}
+
 microphone.then(function (mic) {
   mic.connect(analyser);
   setInterval(function () {
@@ -45,7 +54,8 @@ microphone.then(function (mic) {
       sum += array[i] / 255;
       nb ++;
     }
-    var value = Math.floor(100*sum/nb);
+    var value = Math.floor(255*sum/nb);
+    sendHeight(value);
     micProgress.value = value;
   }, REFRESH_RATE);
 });
