@@ -8,7 +8,7 @@ import utils._
 
 object Application extends Controller {
   def index = Action {
-    Ok(views.html.index(""))
+    Ok(views.html.index())
   }
 
   def letter = Action { request =>
