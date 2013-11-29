@@ -12,4 +12,8 @@ object Serial {
   def send(s: String) = {
     serial.send(s.getBytes("US-ASCII")(0))
   }
+
+  def send(b: Byte) = {
+    serial.send(b);
+  }
 }

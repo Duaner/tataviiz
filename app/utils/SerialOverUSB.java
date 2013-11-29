@@ -74,8 +74,10 @@ public class SerialOverUSB {
 	}
 
 	public void send(byte c) throws IOException {
-		System.out.println("Send " + c);
-		this.output.write(c);
-		this.output.flush();
+		if (this.output != null) {
+			System.out.println("Send " + c);
+			this.output.write(c);
+			this.output.flush();
+		}
 	}
 }
